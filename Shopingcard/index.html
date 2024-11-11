@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Mobile Shop</title>
+</head>
+
+<body>
+    <!-- Nav Bar Section -->
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand mx-5" href="#"><img src="images/logo.jpg" alt="" class="logo"><h3>Mobile Shop</h3></a>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="d-flex ms-auto" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 mx-5">
+              <li class="nav-item">
+                <a class="nav-link fw-bold" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="service.html">Service</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="product.html">Product</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="contact.html">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link fw-bold" href="cart.html">Cart <sup id="cartlen" style="color: red;"></sup></a>
+                  <script>
+                      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                          function getnum(){
+                              document.querySelector('#cartlen').innerHTML = cart.length
+                          }
+                          getnum()
+                  </script>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="signup.html">Login/Signup</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+    <main>
+        <!-- First Section -->
+        <section class="firstSection">
+            <div class="leftSection">
+                <span id="element"></span>
+            </div>
+            <div class="rightSection">
+                <img width="100%" height="250px" src="data:image/jpeg;base64,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"
+                   class="imageSlider" alt="">
+                <div class="float">
+                    <div class="fas fa-angle-left" onclick="prev()"></div>
+                    <div class="fas fa-angle-right" onclick="next()"></div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Third Section -->
+        <section class="thirdSection">
+            <h1 class="heading">PRODUCT</h1>
+            <div class="items">
+                <div class="box">
+                    <img src="https://cdn.dummyjson.com/products/images/smartphones/iPhone%205s/thumbnail.png" alt="">
+                    <div class="content">
+                        <p>iPhone 5s <br><span>$ 199.99</span></p>
+                        <form action="" method="post">
+                            <button type="submit" name="update_qty" class="btn-view">View Detail</button>
+                            <button type="submit" name="update_qty" class="btn-add">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://cdn.dummyjson.com/products/images/smartphones/Oppo%20A57/thumbnail.png" alt="">
+                    <div class="content">
+                        <p>Oppo A57<br><span>$ 249.99</span></p>
+                        <form action="" method="post">
+                            <button type="submit" name="update_qty" class="btn-view">View Detail</button>
+                            <button type="submit" name="update_qty" class="btn-add">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://cdn.dummyjson.com/products/images/smartphones/Realme%20C35/thumbnail.png" alt="">
+                    <div class="content">
+                        <p>Realme C35 <br><span>$ 149.99</span></p>
+                        <form action="" method="post">
+                            <button type="submit" name="update_qty" class="btn-view">View Detail</button>
+                            <button type="submit" name="update_qty" class="btn-add">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S7/thumbnail.png" alt="">
+                    <div class="content">
+                        <p>Samsung Galaxy S7 <br><span>$ 299.99</span></p>
+                        <form action="" method="post">
+                            <button type="submit" name="update_qty" class="btn-view">View Detail</button>
+                            <button type="submit" name="update_qty" class="btn-add">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://cdn.dummyjson.com/products/images/smartphones/Vivo%20S1/thumbnail.png" alt="">
+                    <div class="content">
+                        <p>Vivo S1 <br><span>$ 249.99</span></p>
+                        <form action="" method="post">
+                            <button type="submit" name="update_qty" class="btn-view">View Detail</button>
+                            <button type="submit" name="update_qty" class="btn-add">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/thumbnail.png" alt="">
+                    <div class="content">
+                        <p>iPhone 13 Pro <br><span>$ 1099.99</span></p>
+                        <form action="" method="post">
+                            <button type="submit" name="update_qty" class="btn-view">View Detail</button>
+                            <button type="submit" name="update_qty" class="btn-add">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://cdn.dummyjson.com/products/images/smartphones/Oppo%20F19%20Pro%20Plus/thumbnail.png" alt="">
+                    <div class="content">
+                        <p>Oppo F19 Pro Plus <br><span>$ 399.99</span></p>
+                        <form action="" method="post">
+                            <button type="submit" name="update_qty" class="btn-view">View Detail</button>
+                            <button type="submit" name="update_qty" class="btn-add">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://cdn.dummyjson.com/products/images/smartphones/Realme%20X/thumbnail.png" alt="">
+                    <div class="content">
+                        <p>Realme X <br><span>$ 299.99</span></p>
+                        <form action="" method="post">
+                            <button type="submit" name="update_qty" class="btn-view">View Detail</button>
+                            <button type="submit" name="update_qty" class="btn-add">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S10/thumbnail.png" alt="">
+                    <div class="content">
+                        <p>Samsung Galaxy S10 <br><span>$ 699.99</span></p>
+                        <form action="" method="post">
+                            <button type="submit" name="update_qty" class="btn-view">View Detail</button>
+                            <button type="submit" name="update_qty" class="btn-add">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        </section>
+
+        <!-- Fourth Section -->
+        <section class="fourthSection">
+            <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="container">
+                    <div class="text-center">
+                        <h5 class="section-title ff-secondary text-center text-primary fw-normal">Feedback</h5>
+                        <h1 class="mb-5">Our Clients Say!!!</h1>
+                    </div>
+
+                    <div class="owl-carousel testimonial-carousel">
+                        <div class="testimonial-item bg-transparent border rounded p-4">
+                            <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                            <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos
+                                labore diam</p>
+                            <div class="d-flex align-items-center">
+                                <img class="img-fluid flex-shrink-0 rounded-circle" src="images/client/client-1.jpg"
+                                    style="width: 50px; height: 50px;">
+                                <div class="ps-3">
+                                    <h5 class="mb-1">Client Name</h5>
+                                    <small>Profession</small>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="testimonial-item bg-transparent border rounded p-4">
+                            <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                            <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos
+                                labore diam</p>
+                            <div class="d-flex align-items-center">
+                                <img class="img-fluid flex-shrink-0 rounded-circle" src="images/client/client-2.jpg"
+                                    style="width: 50px; height: 50px;">
+                                <div class="ps-3">
+                                    <h5 class="mb-1">Client Name</h5>
+                                    <small>Profession</small>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="testimonial-item bg-transparent border rounded p-4">
+                            <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                            <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos
+                                labore diam</p>
+                            <div class="d-flex align-items-center">
+                                <img class="img-fluid flex-shrink-0 rounded-circle" src="images/client/client-3.jpg"
+                                    style="width: 50px; height: 50px;">
+                                <div class="ps-3">
+                                    <h5 class="mb-1">Client Name</h5>
+                                    <small>Profession</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Footer Section -->
+        <section class="footer">
+            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+                <div class="me-5 d-none d-lg-block">
+                    <span>Get connected with us on social networks:</span>
+                </div>
+
+                <div>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </section>
+            <section class="">
+                <div class="container text-center text-md-start mt-5">
+                    <div class="row mt-3">
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                <i class="fas fa-gem me-3"></i>Company name
+                            </h6>
+                            <p>
+                                Here you can use rows and columns to organize your footer content. Lorem ipsum
+                                dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                        </div>
+
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Products
+                            </h6>
+                            <p>
+                                <a href="#!" class="text-reset">Smart Phone</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Electronic</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">TV</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Clothes</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Home Appliances</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Groceries</a>
+                            </p>
+                        </div>
+
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Useful links
+                            </h6>
+                            <p>
+                                <a href="#!" class="text-reset">Pricing</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Settings</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Orders</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Help</a>
+                            </p>
+                        </div>
+
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                            <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                            <p>
+                                <i class="fas fa-envelope me-3"></i>
+                                info@example.com
+                            </p>
+                            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2021 Copyright:
+                <a class="text-reset fw-bold" href="https://mdbootstrap.com/">E-commerce.com</a>
+            </div>
+
+        </section>
+    </main>
+</body>
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+<script src="app.js"></script>
+
+</html>
